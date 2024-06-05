@@ -1,1 +1,1 @@
-Get-Service | where {$_.StartType -eq "Manual"}
+Get-Service | Where-Object {$_.StartType -eq "Manual"}
