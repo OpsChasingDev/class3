@@ -8,6 +8,15 @@ $ComputerName = hostname
 $OSVersion = [environment]::OSVersion.Version
 # Get-ComputerInfo
 
+# get number of logical drives
+$LogicalDrive = Get-CimInstance CIM_LogicalDisk
+
+# create custom object
+$obj = [PSCustomObject]@{
+    ComputerName = $ComputerName
+    OSVersion = $OSVersion
+    NumberLogicalDrive = $LogicalDrive
+}
+
 # write output
-Write-Output $ComputerName
-Write-Output $OSVersion
+Write-Output $obj
