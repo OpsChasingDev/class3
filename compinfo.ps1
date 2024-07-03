@@ -4,5 +4,10 @@
 # get system name
 $ComputerName = hostname
 
+# get OS version
+$OSVersion = [environment]::OSVersion.Version
+# Get-ComputerInfo
+
 # write output
 Write-Output $ComputerName
+Write-Output $OSVersion
