@@ -5,7 +5,8 @@
 $ComputerName = hostname
 
 # get OS version
-$OSVersion = [environment]::OSVersion.Version
+$OSVersionRaw = [environment]::OSVersion.Version
+$OSVersion = [string]$OSVersionRaw.Major + "." + [string]$OSVersionRaw.Minor + "." + [string]$OSVersionRaw.Build + "." + [string]$OSVersionRaw.Revision
 # Get-ComputerInfo
 
 # get number of logical drives
